@@ -1,0 +1,33 @@
+
+
+
+
+#profpic{
+    height: 30%;
+    width:inherit;
+
+}
+#profpic img{
+    border-radius: 50%;
+}
+
+/* @media screen and (max-width: 480px) {
+    .profile {
+         width: 120px;
+         height: 150px;
+    }
+    #profpic{
+        height:100px;
+        width:inherit;
+    }
+}
+@media screen and (max-width: 600px){
+    .profile{
+        width:200px;
+        height: 250px;
+    }
+    #profpic{
+        height:120px;
+        width:inherit;
+    }
+} */

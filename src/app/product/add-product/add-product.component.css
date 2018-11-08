@@ -1,0 +1,10 @@
+#product_img{
+    height:200px;
+    width:200px;
+    background-color: darkgray;
+}
+.productimage{
+    height:50%;
+    width:30%;
+    margin:auto;
+}

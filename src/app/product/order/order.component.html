@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 col-sm-4 product_img shadow-lg" *ngIf="product">
+            <img src="{{ orderProduct.image }}" class="img-responsive text-center">
+        </div>
+        <div class="col-md-1 col-sm-1"></div>
+        <div class="col-md-5 col-sm-6 product_content shadow-lg" *ngIf="product">
+            <h4>Product Id: <span> {{ product.id }} </span></h4>
+            <div class="rating">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                (10 reviews)
+            </div>
+            <p>{{ product.description }}</p>
+            <div class="form-group">
+                <input type="number" min="1" [(ngModel)]="product.quantity" >
+            </div>
+            <div>
+                <p class="text-warning" *ngIf="product.quantity > 1">Kshs {{product.total}}</p>
+            </div>
+            <h3 class="cost"><span class="glyphicon glyphicon-usd"></span>Kshs {{product.price }}</h3>
+            
+            <div class="space-ten"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-primary btn-xs" (click)="addToCart(product)"> Add To Cart</button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-primary btn-xs"> Add To Wishlist</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

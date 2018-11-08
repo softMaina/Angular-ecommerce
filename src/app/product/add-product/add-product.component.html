@@ -1,0 +1,67 @@
+<div class="container mb-10">
+  <h4>Add a new product</h4>
+  <div class="productimage" [hidden]="!imgUploaded">
+    <img src="{{ downloadUrl }}" alt="">
+  </div>
+  <form [formGroup]="productForm">
+    <div class="form-group text-center" [hidden]="imgUploaded">
+        <label for="pictures">Product image</label>
+      <div id="product_img" class="text-center">
+         
+          <input type="file" class="form-control" id="image" (change)="upload($event)">
+      </div>
+   
+    </div>
+    <div class="form-group">
+        <div class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+        aria-valuemin="0" aria-valuemax="100"
+        [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+      </div>
+
+    <div class="form-group">
+      <label for="title">Product Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Product title" formControlName="title">
+      </div>
+
+    <div class="form-group">
+        <label for="brief_description">brief description</label>
+        <input type="text" class="form-control" placeholder="brief description" formControlName="brief_description">
+
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Description</label>
+          <input type="text" class="form-control" placeholder="Description" formControlName="description">
+      
+    </div>
+    <div class="form-group">
+            <label for="exampleInputEmail1">Units</label>
+            <input type="email" class="form-control"  placeholder="Units" formControlName="units">
+            
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Price</label>
+      <input type="email" class="form-control"  placeholder="Price" formControlName="price">
+    </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+        <input type="email" class="form-control"  placeholder="Location" formControlName="location">   
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Category</label>
+        <select class="form-control" formControlName="category_id">
+          <option value="null" selected>  select a product category </option>
+          <option *ngFor="let item of categories$ | async" value="{{ item.id }}" >{{ item.title }}</option>
+          
+      </select>
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="addProduct()">Done</button>
+  </form>
+
+</div>
+
+<div class="mt-5">
+  This is just to add a margin
+
+</div>
